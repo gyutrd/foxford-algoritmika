@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Фоксфорд × Алгоритмика — корпоративные программы для детей</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: дружелюбный корпоративный ванпейджер двух детских школ, как в печатной листовке
+   IDEA: листовка, развёрнутая в лендинг — те же плашки и цвета, но QR-коды стали кнопками
+   PICTURE: мальчик с бумажным самолётиком из макета, подарок у блока ссылок
+   COLOUR and TYPE: кремовый Фоксфорда #FEF1D7 + оранжевый #F78D1E, лиловый Алгоритмики #ECE1F3 + #4D45A4; Unbounded + Golos Text
+   LAYOUT: шапка с логотипами, герой, две карточки брендов, подарки, пять форматов, контакт
+*/
+:root{color-scheme:light;--ink:#231F20;--muted:#4a4547;--cream:#FEF1D7;--lilac:#ECE1F3;--orange:#F78D1E;--orange-d:#E2700A;--violet:#4D45A4;--violet-d:#542791;--bg:#fff}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 "Golos Text",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3,.big{font-family:Unbounded,"Arial Black",system-ui,sans-serif;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:1160px;margin:0 auto;padding:0 max(5vw,16px)}
+
+/* hero */
+.hero{background:linear-gradient(180deg,#E4E0F1 0%,#EFECF7 40%,#FAF9FD 75%,#fff 100%)}
+.top{padding-top:clamp(20px,3vw,36px)}
+.logos{height:clamp(36px,4.6vw,54px);width:auto;display:block}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(16px,3vw,40px);align-items:center;padding-block:clamp(20px,3vw,32px) clamp(36px,5vw,64px)}
+h1{font-size:clamp(32px,4.6vw,54px);line-height:1.05;margin:0 0 22px;text-wrap:balance}
+.lead{font-size:clamp(17px,1.6vw,20px);max-width:36em;margin:0 0 28px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:14px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
+.btn-o{background:var(--orange);color:#fff}.btn-o:hover{background:var(--orange-d)}
+.btn-g{background:#fff;color:var(--violet);box-shadow:inset 0 0 0 2px var(--violet)}.btn-g:hover{background:var(--lilac)}
+.btn:hover{transform:translateY(-2px)}
+a:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.hero-pic img{width:100%;height:auto;display:block;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 93%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 7%,#000 84%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 93%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 7%,#000 84%,transparent 100%);mask-composite:intersect;}
+
+/* brands */
+.band{padding-block:clamp(36px,5vw,64px)}
+.brands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
+.brand{border-radius:24px;padding:clamp(22px,3vw,34px)}
+.brand.f{background:var(--cream)}.brand.a{background:var(--lilac)}
+.brand h2{font-size:clamp(24px,2.6vw,32px);margin:0 0 10px;line-height:1.1}
+.brand.f h2{color:var(--orange)}.brand.a h2{color:var(--violet)}
+.brand p{margin:0 0 22px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px;margin:0}
+.stats div{margin:0}
+.stats dt{font-family:Unbounded,system-ui,sans-serif;font-weight:700;font-size:clamp(22px,2.4vw,28px);line-height:1.1;white-space:nowrap}
+.stats dd{margin:2px 0 0;color:var(--muted);font-size:16px}
+
+/* gifts */
+.gift{background:var(--cream);border-radius:28px;padding:clamp(24px,3.4vw,44px);display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:24px;align-items:center}
+.gift h2{font-size:clamp(28px,3.2vw,40px);margin:0 0 8px;line-height:1.05}
+.gift .sub{margin:0 0 24px;color:var(--muted)}
+.links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.lk{display:flex;flex-direction:column;justify-content:space-between;gap:18px;background:#fff;border-radius:20px;padding:20px;text-decoration:none;min-height:150px;box-shadow:0 1px 0 rgba(35,31,32,.06);transition:transform .15s,box-shadow .15s}
+.lk:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(247,141,30,.22)}
+.lk b{font-weight:600;font-size:18px;line-height:1.3}
+.lk span{display:inline-flex;align-items:center;gap:8px;color:var(--orange-d);font-weight:600;font-size:16px}
+.lk span::after{content:"";width:30px;height:30px;border-radius:50%;background:var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h13M13 6l6 6-6 6'/%3E%3C/svg%3E") center/16px no-repeat;transition:transform .15s}
+.lk:hover span::after{transform:translateX(4px)}
+.gift-pic{width:100%;height:auto;display:block}
+
+/* offers */
+.offers-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px}
+.offers-head h2{font-size:clamp(30px,3.8vw,46px);line-height:1.05;margin:0}
+.offers-head img{width:clamp(120px,16vw,190px);height:auto;margin-bottom:-8px}
+.offers{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.offer{display:grid;grid-template-columns:72px minmax(0,1fr);gap:clamp(10px,2vw,22px);align-items:center;border-radius:24px;padding:clamp(20px,2.6vw,30px) clamp(20px,3vw,36px)}
+.offer:nth-child(odd){background:var(--cream)}.offer:nth-child(even){background:var(--lilac)}
+.offer .n{font-family:Unbounded,system-ui,sans-serif;font-weight:700;font-size:clamp(48px,5.4vw,64px);line-height:1;text-align:center}
+.offer:nth-child(odd) .n{color:var(--orange)}.offer:nth-child(even) .n{color:var(--violet)}
+.offer h3{font-size:clamp(18px,1.9vw,22px);margin:0 0 8px;line-height:1.2}
+.offer p{margin:0;max-width:62ch}
+.events{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:6px}
+.events div{padding:4px 18px}
+.events div:first-child{padding-left:0}
+.events div+div{border-left:1px solid rgba(35,31,32,.18)}
+.events h4{margin:0 0 4px;font-size:16px;font-weight:600;line-height:1.3}
+.events p{font-size:15px;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--violet);color:#fff}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:center}
+.contact h2{font-size:clamp(26px,3vw,36px);line-height:1.1;margin:0 0 10px}
+.contact p{margin:0;opacity:.92}
+.person{background:rgba(255,255,255,.1);border-radius:24px;padding:clamp(20px,3vw,30px)}
+.person b{display:block;font-size:20px;margin-bottom:4px}
+.mail{display:inline-flex;align-items:center;margin-top:16px;min-height:48px;padding:12px 20px;border-radius:14px;background:#fff;color:var(--violet);font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.mail:hover{background:var(--cream)}
+footer{background:var(--violet);color:rgba(255,255,255,.7);font-size:14px;padding:0 0 28px}
+
+@media (max-width:860px){
+  .gift{grid-template-columns:minmax(0,1fr)}
+  .gift-pic{display:none}
+  .contact-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:700px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-pic{order:-1;max-width:360px;margin:0 auto}
+  .brands{grid-template-columns:minmax(0,1fr)}
+  .links{grid-template-columns:minmax(0,1fr)}
+  .lk{min-height:0;flex-direction:row;align-items:center}
+  .lk span{font-size:0;gap:0}
+  .lk span::after{width:36px;height:36px;flex:none}
+  .events{grid-template-columns:minmax(0,1fr);gap:12px}
+  .events div{padding:0}.events div+div{border-left:0;border-top:1px solid rgba(35,31,32,.18);padding-top:12px}
+  .offer{grid-template-columns:minmax(0,1fr)}
+  .offer .n{text-align:left}
+  .offers-head img{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.lk,.lk span::after{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap top">
+    <img class="logos" src="logos.png" alt="Фоксфорд × Алгоритмика" width="720" height="111">
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Корпоративные образовательные программы для&nbsp;детей</h1>
+      <p class="lead">Цифровые навыки и программирование от Алгоритмики + подготовка к ОГЭ, ЕГЭ и олимпиадам от Фоксфорда — два образовательных бренда в одном корпоративном предложении</p>
+      <div class="cta">
+        <a class="btn btn-o" href="#gifts">Получить подарок</a>
+        <a class="btn btn-g" href="#contact">Обсудить формат</a>
+      </div>
+    </div>
+    <div class="hero-pic"><img src="hero.jpg" alt="Улыбающийся мальчик с бумажным самолётиком" width="640" height="840"></div>
+  </div>
+</header>
+
+<main>
+  <section class="band">
+    <div class="wrap brands">
+      <article class="brand f">
+        <h2>Фоксфорд</h2>
+        <p>Онлайн-школа: вся школьная программа, подготовка к ОГЭ, ЕГЭ и олимпиадам, репетиторы</p>
+        <dl class="stats">
+          <div><dt>17 лет</dt><dd>на рынке</dd></div>
+          <div><dt>14 млн+</dt><dd>пользователей</dd></div>
+          <div><dt>170 000+</dt><dd>учеников</dd></div>
+        </dl>
+      </article>
+      <article class="brand a">
+        <h2>Алгоритмика</h2>
+        <p>Школа цифровых и ИИ-навыков: программирование, Python, веб-разработка, геймдизайн</p>
+        <dl class="stats">
+          <div><dt>9 лет</dt><dd>на рынке</dd></div>
+          <div><dt>90+</dt><dd>стран</dd></div>
+          <div><dt>1,5 млн+</dt><dd>выпускников</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="band" id="gifts" style="padding-top:0">
+    <div class="wrap">
+      <div class="gift">
+        <div>
+          <h2>Подарок для вас!</h2>
+          <p class="sub">Выберите, с чего начать — ссылки открываются в новой вкладке</p>
+          <div class="links">
+            <a class="lk" href="https://week.foxford.ru/?utm_medium=gr&amp;utm_source=b2b&amp;utm_campaign=gr_all_all_demo&amp;network=&amp;utm_content=" target="_blank" rel="noopener"><b>Набор занятий для новых достижений</b><span>Перейти</span></a>
+            <a class="lk" href="https://freecourses.foxford.ru/?utm_medium=gr&amp;utm_source=b2b&amp;utm_campaign=freecourses&amp;network=&amp;utm_content=" target="_blank" rel="noopener"><b>Бесплатная подготовка к ОГЭ и ЕГЭ</b><span>Перейти</span></a>
+            <a class="lk" href="https://foxford.ru/free-lessons-group?utm_medium=gr&amp;utm_source=b2b&amp;utm_campaign=gr_add_all_freelessonsmg&amp;network=&amp;utm_content=" target="_blank" rel="noopener"><b>2 бесплатных урока в группе</b><span>Перейти</span></a>
+          </div>
+        </div>
+        <img class="gift-pic" src="gift.jpg" alt="" width="316" height="440">
+      </div>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:0">
+    <div class="wrap">
+      <div class="offers-head">
+        <h2>Что мы предлагаем</h2>
+        <img src="ticket.jpg" alt="" width="440" height="237">
+      </div>
+      <ol class="offers">
+        <li class="offer"><div class="n">1</div><div><h3>Промокоды на полную оплату</h3><p>Компания закупает промокоды на фиксированный номинал или конкретные продукты Алгоритмики и Фоксфорда — сотрудник активирует код без доплаты.</p></div></li>
+        <li class="offer"><div class="n">2</div><div><h3>Софинансирование 50/50</h3><p>Компания оплачивает половину стоимости обучения, вторую половину — сотрудник. Снижает нагрузку на бюджет и повышает осознанность участия семьи.</p></div></li>
+        <li class="offer"><div class="n">3</div><div><h3>Подготовка к ОГЭ, ЕГЭ и олимпиадам</h3><p>В корпоративных группах — закрытые потоки только для детей сотрудников: вебинары, домашние задания, диагностика и отчётность по прогрессу. ОГЭ/ЕГЭ — математика, русский, физика, химия; олимпиады — математика, физика. От 30 человек в потоке. Индивидуальные траектории подготовки и поддержка кураторов.</p></div></li>
+        <li class="offer"><div class="n">4</div><div><h3>Скидки сотрудникам</h3><p>Бесплатно для компании — передаём сотрудникам промокоды на скидку на курсы Алгоритмики и Фоксфорда для их детей.</p></div></li>
+        <li class="offer"><div class="n">5</div><div><h3>Очные семейные мероприятия</h3>
+          <div class="events">
+            <div><h4>Путь героя</h4><p>Дети создают сказки с родителями в главных ролях — укрепляет семейные связи</p></div>
+            <div><h4>Семейные выходные</h4><p>Лекции и мастер-классы по 3D-моделированию и робототехнике</p></div>
+            <div><h4>Тренинг «Цифровая и коммуникативная грамотность»</h4><p>Промптинг и защита проектов</p></div>
+          </div></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Обсудим формат под вашу команду?</h2>
+        <p>Подберём программы Алгоритмики и Фоксфорда для вашей компании</p>
+      </div>
+      <div class="person">
+        <b>Ирина Басова</b>
+        <p>Руководитель направления по работе с государственным сектором</p>
+        <a class="mail" href="mailto:i.v.basova@algteam.ru">i.v.basova@algteam.ru</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Фоксфорд × Алгоритмика</div></footer>
+</body>
+</html>
